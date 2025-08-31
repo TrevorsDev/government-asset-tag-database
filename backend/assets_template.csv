@@ -1,0 +1,4 @@
+asset_tag,pr,status,po,sn,model,dept,notes
+AT-20001,PR-010,active,PO-2025-010,SN-ABC123,Dell Latitude 5450,Finance,Issued 2025-08
+AT-20002,PR-011,inactive,PO-2025-011,SN-DEF456,HP ProBook 440 G9,IT,Needs battery replacement
+AT-20003,PR-012,retired,PO-2023-050,SN-GHI789,Lenovo ThinkCentre M80q,HR,Donated to nonprofit
