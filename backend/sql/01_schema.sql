@@ -1,23 +1,24 @@
 -- Assets table
-create table if not exists assets (
-  id bigserial primary key,
-  asset_tag text unique not null,
-  pr text,
-  status text check (status in ('active', 'inactive', 'retired')),
-  po text,
-  sn text,
-  model text,
-  dept text,
-  notes text,
-  created_at timestamp default now()
+CREATE TABLE if NOT EXISTS assets (
+  id BIGSERIAL PRIMARY KEY,
+  asset_tag TEXT UNIQUE NOT NULL,
+  pr TEXT,
+  status TEXT CHECK (status IN ('active', 'inactive', 'retired')),
+  po TEXT,
+  sn TEXT,
+  model TEXT,
+  manufacturer,
+  dept TEXT,
+  date_created TIMESTAMP DEFAULT NOW()
+  notes TEXT,
 );
 
 -- Import logs (for tracking CSV uploads)
-create table if not exists import_logs (
-  id bigserial primary key,
-  filename text not null,
-  imported_at timestamp default now(),
-  row_count int
+CREATE TABLE if NOT EXISTS import_logs (
+  id BIGSERIAL PRIMARY KEY,
+  FILENAME TEXT NOT NULL,
+  imported_at TIMESTAMP NOT NULL(),
+  row_count INT
 );
 
 -- Row-level security (required by Supabase)

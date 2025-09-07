@@ -14,25 +14,25 @@ The project is being developed with a **Supabase backend** and a **React fronten
 
 ## Project Structure
 ASSET-TAG-DATABASE
-  backend
-    sql/
-      01_schema.sql # Table structure: assets, import_logs
-      02_policies.sql # Row-level security & access policies
-      03_seed.sql # Example data for seeding the database
-      04_queries.sql # Useful queries to interact with data
-      05_utilities.sql # Verification, row counts, and maintenance scripts
-    assets_seed.csv # Example CSV for importing asset data
-    frontend
-      App.jsx
-      index.html
-  README.md
+ - backend
+   - sql/
+     - 01_schema.sql # Table structure: assets, import_logs
+      - 02_policies.sql # Row-level security & access policies
+      - 03_seed.sql # Example data for seeding the database
+      - 04_queries.sql # Useful queries to interact with data
+      - 05_utilities.sql # Verification, row counts, and maintenance scripts
+    - assets_seed.csv # Example CSV for importing asset data
+    - frontend
+      - App.jsx
+      - index.html
+  - README.md
 
 ## Current Progress
 
 ### Backend (Supabase)
 - Supabase project created
 - **Tables Created:**
-  - `assets` (columns: id, asset_tag, pr, status, po, sn, model, dept, notes, created_at)
+  - `assets` (columns: id, asset_tag, pr, status, po, sn, model, dept, date_created, notes)
   - `import_logs` (columns: id, filename, imported_at, row_count, tracks CSV uploads)
 - **Policies Implemented:**
   - Row-level security for authenticated users
@@ -54,7 +54,7 @@ ASSET-TAG-DATABASE
 ## Next Steps
 - ✅ Clean up Supabase SQL schema and policies
 - ✅ Confirm CSV import works with `assets` table
-- 🔲 Scaffold frontend React app using Vite
+- ✅ Scaffold frontend React app using Vite
 - 🔲 Connect frontend to Supabase via JS client
 - 🔲 Implement landing page: view assets, navigation, search
 - 🔲 Implement import functionality from frontend
