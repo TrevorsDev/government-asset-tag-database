@@ -3,11 +3,11 @@ import { createClient } from "@supabase/supabase-js";
 import "./App.css";
 import "./index.css";
 
-// ⚡ Replace with your own Supabase project URL + anon key
-const SUPABASE_URL = "https://dismdkkmjmudjmjfebsr.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRpc21ka2ttam11ZGptamZlYnNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUxMjcyMjcsImV4cCI6MjA3MDcwMzIyN30.Jaf7sD-Y5IMbM3hhcR4aik9jmUIfTczyOsRzKpUXd1E";
+const supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_ANON_KEY
+);
 
-const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 export default function App() {
   const [assets, setAssets] = useState([]);
